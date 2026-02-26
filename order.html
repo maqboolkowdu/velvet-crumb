@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | Velvet & Crumb</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Velvet & Crumb</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Signature Cakes</a></li>
+            <li><a href="order.html">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="order-section">
+        <h2 style="text-align: center; margin: 40px 0;">Place Your Order</h2>
+        
+        <form class="order-form" id="cakeOrderForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <label for="cake">Select Your Cake</label>
+            <select id="cake" name="cake">
+                <option value="vanilla">The Classic Vanilla</option>
+                <option value="chocolate">Midnight Truffle</option>
+                <option value="custom">Custom Design Inquiry</option>
+            </select>
+
+            <label for="date">Delivery Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit" class="btn-primary" style="margin-top: 20px;">Submit Order</button>
+        </form>
+
+        <div id="successMessage" style="display: none; text-align: center; margin-bottom: 80px; padding: 40px; background: #ffffff; border-radius: 8px; border: 1px solid #d4a373;">
+            <h3 style="color: #2c2420; font-size: 2rem; margin-bottom: 10px;">Order Received! 🎉</h3>
+            <p id="confirmationText" style="font-size: 1.2rem;"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Velvet & Crumb. Baking the world a better place.</p>
+    </footer>
+<script>
+        // 1. Target the elements (Like defining variables in a script)
+        const form = document.getElementById('cakeOrderForm');
+        const successBox = document.getElementById('successMessage');
+        const confirmText = document.getElementById('confirmationText');
+
+        // 2. Create an Event Listener (Like a background service waiting for a trigger)
+        form.addEventListener('submit', function(event) {
+            
+            // 3. STOP the form from doing its default page-reload behavior
+            event.preventDefault(); 
+
+            // 4. Read the data the user typed in
+            const customerName = document.getElementById('name').value;
+            const cakeSelect = document.getElementById('cake');
+            const cakeName = cakeSelect.options[cakeSelect.selectedIndex].text;
+            const deliveryDate = document.getElementById('date').value;
+
+            // 5. Hide the form and show the success box
+            form.style.display = 'none';
+            successBox.style.display = 'block';
+
+            // 6. Write a dynamic message to the screen
+            confirmText.innerText = `Thank you, ${customerName}! Your order for the ${cakeName} has been recorded for delivery on ${deliveryDate}. We will contact you shortly to arrange payment.`;
+        });
+    </script>
+</body>
+</html>

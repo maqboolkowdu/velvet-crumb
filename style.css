@@ -123,3 +123,70 @@ footer {
     color: #fdfaf6;
     font-size: 0.9rem;
 }
+
+/* 7. Menu Page Styles */
+.menu-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 50px 80px 50px;
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+}
+
+.menu-item {
+    width: 300px;
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: 700;
+    color: #d4a373;
+    font-size: 1.2rem;
+    margin: 10px 0 20px 0;
+}
+
+/* 8. Order Form Styles */
+.order-form {
+    max-width: 500px;
+    margin: 0 auto 80px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.order-form input, 
+.order-form select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+}
+
+.order-form input:focus, 
+.order-form select:focus {
+    outline: none;
+    border-color: #d4a373; /* Highlights the box when you click it */
+}
